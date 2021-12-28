@@ -118,7 +118,10 @@ class Player{
   
   // sets all hands to empty
   void clearHands(){
-    for (int i = 0; i < allHands.size(); i++) allHands.get(i).clearHand();
+    for (int i = 0; i < allHands.size(); i++){
+      allHands.get(i).clearHand();
+      if (i > 0) allHands.remove(i);
+    }
     splitted = false;
   }
   
@@ -242,9 +245,9 @@ class Hand{
     
     // removes all cards from the hand
     void clearHand(){
-      hand.clear();
       ace = false;
       busted = false;
+      hand.clear();
     }
     
 } //end class Player
