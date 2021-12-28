@@ -119,6 +119,7 @@ class Player{
   // sets all hands to empty
   void clearHands(){
     for (int i = 0; i < allHands.size(); i++) allHands.get(i).clearHand();
+    splitted = false;
   }
   
   // getter method for the player's wealth
@@ -242,6 +243,8 @@ class Hand{
     // removes all cards from the hand
     void clearHand(){
       hand.clear();
+      ace = false;
+      busted = false;
     }
     
 } //end class Player
